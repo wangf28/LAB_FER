@@ -1,15 +1,15 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Detail from "./Detail";
 import { ThemeContext } from "../contexts/ThemContext";
-import { useNavigate, useParams, useLocation } from "react-router";
+import { useNavigate, useParams /*, useLocation*/ } from "react-router";
 
 function MyCard(props) {
   const [showDetail, setShowDetail] = useState(false);
-  const { theme } = useContext(ThemeContext);
+  // const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   const { id: urlParamId } = useParams();
 
   // Kiểm tra URL khi component mount để mở modal nếu có ID trùng khớp
@@ -33,11 +33,7 @@ function MyCard(props) {
 
   return (
     <>
-      <Card
-        bg={theme}
-        data-bs-theme={theme}
-        style={{ width: "100%", height: "400px" }}
-      >
+      <Card style={{ width: "100%", height: "400px" }}>
         <Card.Img
           variant="top"
           src={props.img}

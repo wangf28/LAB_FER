@@ -7,7 +7,7 @@ function MyButton() {
 
   return (
     <>
-      <Button onClick={handleTheme}>Change card theme</Button>
+      <Button onClick={handleTheme}>Change theme</Button>
     </>
   );
 }
